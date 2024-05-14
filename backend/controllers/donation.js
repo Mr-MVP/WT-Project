@@ -45,6 +45,7 @@ const updateDonation = async (req, res) => {
 const getAllDonations = async (req, res) => {
     try {
         const donations = await donation.find().populate('userId', 'email');
+        console.log(donations)
         res.json(donations);
     } catch (error) {
         res.status(500).json({ error: 'Failed to get donations.' });

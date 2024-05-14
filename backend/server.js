@@ -17,8 +17,10 @@ db.once('open', () => {
 });
 
 import userRoutes from './routes/user.js';
+import donationRoutes from './routes/donation.js';
 
 app.use('/api/user', userRoutes);
+app.use('/api/donation', donationRoutes);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

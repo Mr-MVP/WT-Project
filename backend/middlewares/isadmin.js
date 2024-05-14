@@ -1,8 +1,8 @@
+import User from '../models/user.js';
 import pkg from 'jsonwebtoken';
 const { verify } = pkg;
-import User from "../models/user.js";
 
-const requireAuth = async (req, res, next) => {
+const isAdmin = async (req, res, next) => {
     const { authorization } = req.headers
 
     if (!authorization) {
@@ -13,12 +13,15 @@ const requireAuth = async (req, res, next) => {
 
     try {
         const { _id } = verify(token, process.env.SECRET)
-        const user = await User.findById(_id).select('_id');
-        req.user = user;
+        const user = await User.findById(_id);
+        console.log(user)
+        if (user.role !== 'admin') {
+            return res.status(401).json({ error: 'You are not authorized' })
+        }
         next();
     } catch (error) {
         return res.status(401).json({ error: 'Request is not authorized' })
     }
-}
+};
 
-export default requireAuth;
+export default isAdmin;

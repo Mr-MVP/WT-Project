@@ -25,7 +25,7 @@ const userSchema = new Schema({
     }
 })
 
-userSchema.statics.signup = async function (username, email, password) {
+userSchema.statics.signup = async function (username, email, password, role) {
 
     if (!email || !password || !username) {
         throw Error('All fields must be filled')
@@ -51,7 +51,7 @@ userSchema.statics.signup = async function (username, email, password) {
     const salt = await genSalt(10)
     const hashedPassword = await hash(password, salt)
 
-    const user = await model('User').create({ username, email, password: hashedPassword })
+    const user = await model('User').create({ username, email, password: hashedPassword, role })
 
     return user
 }

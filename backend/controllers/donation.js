@@ -2,7 +2,7 @@ import donation from "../models/donation.js";
 import User from "../models/user.js";
 
 const acceptDonation = async (req, res) => {
-    const { amount, resource } = req.body;
+    const { amount, resource, contact, address, comment, donationType } = req.body;
     const userId = req.user._id;
 
     const existingUser = await User.findById(userId)
@@ -15,6 +15,10 @@ const acceptDonation = async (req, res) => {
             userId,
             amount,
             resource,
+            contact,
+            address,
+            comment,
+            donationType
         });
         await newDonation.save();
         res.status(201).json(newDonation);

@@ -1,13 +1,14 @@
-nav {
+.navbar {
   width: 100%;
-  background: rgb(24, 24, 83);
+  background: #0d47a1;
   color: #fff;
-  padding: 4px 0;
+  padding: 0.75rem 1rem; /* Adjust the padding as needed */
+  height: 5rem;
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
-  align-items: center;
+  align-items: center; /* Center items vertically */
   justify-content: space-between;
   z-index: 10;
 }
@@ -19,8 +20,9 @@ nav {
 nav ul li {
   display: inline-block;
   list-style: none;
-  margin: 5px 20px;
+  margin: 0 20px; /* Adjusted margin to separate items */
   font-size: 16px;
+  align-self: center; /* Align items vertically within flex container */
 }
 
 .container {

@@ -21,7 +21,24 @@ const donationSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    donationType: {
+        type: String,
+        default: ""
+    },
+    contact: {
+        type: String,
+        default: ""
+    },
+    address: {
+        type: String,
+        default: ""
+    },
+    comment: {
+        type: String,
+        default: ""
     }
+
 })
 
 const donation = model('Donation', donationSchema);

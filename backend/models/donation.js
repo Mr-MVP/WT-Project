@@ -37,8 +37,11 @@ const donationSchema = new Schema({
     comment: {
         type: String,
         default: ""
+    },
+    sessionId: {
+        type: String,
+        default: ""
     }
-
 })
 
 const donation = model('Donation', donationSchema);

@@ -5,9 +5,11 @@ import pkg1 from 'body-parser';
 const { json } = pkg1;
 import dotenv from 'dotenv'
 dotenv.config()
+import cors from 'cors';
 
 const app = express();
 app.use(json());
+app.use(cors());
 
 connect(process.env.MONGO_URL);
 const db = connection;

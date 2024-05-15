@@ -16,6 +16,7 @@ const Donation = () => {
     const [address, setAddress] = useState('');
     const [comment, setComment] = useState('');
     const [contact, setContact] = useState('');
+
     useEffect(() => {
         fetchDonations();
     }, []);
@@ -61,15 +62,18 @@ const Donation = () => {
                     }
                 }
             );
-            fetchDonations();
-            setLoading(false);
+            const data = response.data;
+            console.log(data.session.url);
+            if (data.session) {
+                console.log(data.session.url)
+                const newWindow = window.open(data.session.url, '_blank', 'noopener,noreferrer')
+            }
         } catch (error) {
             console.error('Error adding donation:', error);
             setError('Error adding donation');
             setLoading(false);
         }
     };
-
     const formatDate = (dateString) => {
         const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
         return new Date(dateString).toLocaleDateString(undefined, options);

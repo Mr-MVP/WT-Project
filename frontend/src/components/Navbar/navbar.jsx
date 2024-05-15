@@ -1,6 +1,6 @@
 import React from 'react'
 import './Navbar.css'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logonew.png'
 import { Link } from 'react-router-dom';
 import { useLogout } from '../../hooks/useLogout';
 import { useAuthContext } from '../../hooks/useAuthContext';
@@ -20,8 +20,8 @@ const Navbar = () => {
                 <img src={logo} alt="Logo" className='logo' />
             </Link>
             <ul>
-                <li>Home</li>
-                <li>Events</li>
+                <li><Link to={'./home'}>Home</Link></li>
+                <li><Link to={'./events'}>Events</Link></li>
                 <li><Link to={'/donation'}>Donation</Link></li>
                 <li>About Us</li>
                 {

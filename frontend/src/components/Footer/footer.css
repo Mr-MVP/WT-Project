@@ -1,0 +1,82 @@
+.section_padding {
+  padding: 4 rem 4 rem;
+}
+
+.footer {
+  background-color: rgb(24, 24, 83);
+}
+
+.ngo_footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.ngo_footer_link {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.ngo_footer_link_div {
+  width: 150px;
+  margin: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: white;
+}
+
+a {
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.ngo_footer_link_div h4 {
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 0.9 rem;
+}
+
+.ngo_footer-link_div p {
+  font-size: 12px;
+  line-height: 15px;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.ngo_footer_below {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.2rem;
+}
+
+.ngo_footer_below_links {
+  display: flex;
+  flex-direction: row;
+}
+
+.ngo_footer_below_links p {
+  font-size: 13px;
+  line-height: 15px;
+  margin-left: 2rem;
+  color: white;
+  font-weight: 600;
+}
+
+hr {
+  color: white !important;
+  width: 100%;
+}
+
+.ngo_footer_copyright p {
+  font-size: 13px;
+  line-height: 15px;
+  color: white;
+  font-weight: 600;
+}

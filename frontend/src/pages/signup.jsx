@@ -7,14 +7,13 @@ const Signup = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    const [role, setRole] = useState('user');
     const { signup, isLoading, error } = useSignup();
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await signup(username, email, password, role);
+            await signup(username, email, password);
         } catch (error) {
             console.error('Error during signup:', error);
         }
@@ -37,13 +36,6 @@ const Signup = () => {
                     </div>
                     <div className="mb-4">
                         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="role" className="block mb-2">Select Role:</label>
-                        <select id="role" value={role} onChange={(e) => setRole(e.target.value)} className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500">
-                            <option value="user">User</option>
-                            <option value="admin">Admin</option>
-                        </select>
                     </div>
                     <button type="submit" disabled={isLoading} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full mb-4">Signup</button>
                 </form>

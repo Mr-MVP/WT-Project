@@ -7,6 +7,7 @@ import Signup from './pages/signup';
 import Home from './pages/home';
 import Donation from './pages/donation';
 import AdminDonation from './pages/adminDonation';
+import Events from './pages/events';
 
 export default function App() {
   const { user } = useAuthContext();
@@ -18,6 +19,8 @@ export default function App() {
         <Route path='/signup' element={!user ? <Signup /> : <Navigate to="/" />} />
         <Route path='/login' element={!user ? <Login /> : <Navigate to="/" />} />
         <Route path='/donation' element={user ? (user.role === 'admin' ? <AdminDonation /> : <Donation />) : <Navigate to="/login" />} />
+        <Route path='/events' element={<Events />} />
+        <Route path='*' element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

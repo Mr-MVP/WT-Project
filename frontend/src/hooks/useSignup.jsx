@@ -7,12 +7,12 @@ export const useSignup = () => {
     const [isLoading, setIsLoading] = useState(false);
     const { dispatch } = useAuthContext();
 
-    const signup = async (username, email, password, role) => {
+    const signup = async (username, email, password) => {
         setIsLoading(true);
         setError(null);
 
         try {
-            const response = await axios.post('/api/user/signup', { username, email, password, role });
+            const response = await axios.post('/api/user/signup', { username, email, password });
 
             if (response.status === 200) {
                 const json = response.data;

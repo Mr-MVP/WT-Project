@@ -1,4 +1,5 @@
-**Task 1:**
+## Task 1:
+
 Dating nowadays is difficult. There are many people with many different characteristics and interests. This makes making choice with the right partner confusing and tricky. 
 
 Let us use Machine Learning algorithm to study a dataset so that we can get better understanding and insight of interests for future reference *hopefully*. We will be using the **Support Vector Machine a.k.a. (SVM)** Algorithm in order to analyse the dataset. 
